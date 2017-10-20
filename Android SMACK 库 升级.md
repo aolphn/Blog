@@ -39,7 +39,7 @@ ProviderManager.removeExtensionProvider("x","jabber:x:delay");将这个providere
 Smack 4.1 release highlights include support for XEP-198: Stream Management (SMACK-333) and native support for Android. Smack 4.1 obsoletes and is the legitimate successor of aSmack.
 
 - XMPPConnection is now an interface. Use either AbstractXMPPConnection or one of its subclasses as static type when declaring the connection
-- ==SASL authentication was reworked, if you use custom SASL mechanisms then you may have to adopt your code==
+- **SASL authentication was reworked, if you use custom SASL mechanisms then you may have to adopt your code**
 - IQ request handler API added. Packet listeners and collectors are no longer able to listen for IQ requests, i.e. IQs of type 'get' or 'set'.
 - XMPPConnection.addPacketListener is deprecated: use either addAsyncPacketListener or addSyncPacketListener and their remove counterparts
 - StringUtils is now to be found as XmppStringUtils in jxmpp-core (which Smack 4.1 automatically pulls in). The method names changed a bit, e.g. parseName became parseLocalpart and so on.
@@ -47,7 +47,7 @@ Smack 4.1 release highlights include support for XEP-198: Stream Management (SMA
 - MessageListener has been renamed to ChatMessageListener. Attention: MessageListener still exists with a different interface contract!
 - ConnectionConfiguration uses the builder pattern
 - FormField.getType and Form.getType became Enums. Watch out for broken comparisons like formField.getType().equals("hidden")
-- ==Packet became a deprecated interface. Use the new Stanza class and getStanzaId instead of getPacketID==
+- **Packet became a deprecated interface. Use the new Stanza class and getStanzaId instead of getPacketID**
 - Roster now follows the Manager pattern (use Roster.getInstanceFor(XMPPConnection) to obtain an instance, - - XMPPConnection.getRoster() is no longer available)
 - ConnectionListener.authenticated adds a new boolean parameter resumed
 - XMPPTCPConnection.addStanzaAcknowledgedListener does not throw StreamManagementNotEnabledException anymore - use XMPPTCPConnection.isSmEnabled
@@ -68,7 +68,7 @@ Methods invoking network operations and awaiting responses are now interruptible
 
 #### Use JXMPP's JID types
 
-==JXMPP's JID types provide an powerful yet simply to use abstraction over an XMPP address (also called "JID"). This helps to minimize problems caused by using the wrong JID type or by the normalization applied to JIDs. To create a JID from a CharSequence (this includes String) simply use JidCreate.from(charSequence).==
+**JXMPP's JID types provide an powerful yet simply to use abstraction over an XMPP address (also called "JID"). This helps to minimize problems caused by using the wrong JID type or by the normalization applied to JIDs. To create a JID from a CharSequence (this includes String) simply use JidCreate.from(charSequence).**
 
 #### Improved the Multi User Chat API
 
